@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="kg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url("https://img.freepik.com/free-vector/education-pattern-background-doodle-style_53876-115365.jpg?t=st=1745408042~exp=1745411642~hmac=460650f3ce135d8a25f03d7c4693f6e5f31adfc28d80fae0359126a79ec501de&w=826");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+        .container {
+            width: 350px;
+            background: rgba(0, 0, 0, 0.552);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+        }
+        h2 {
+            color: white;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .input-field {
+            margin-bottom: 20px;
+        }
+        .input-field input {
+            height: 45px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            color: white;
+            padding: 0 20px;
+            background: rgba(0, 0, 0, 0.552);
+        }
+        .submit {
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            height: 45px;
+            outline: none;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: .3s;
+        }
+        .submit:hover {
+            box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+        }
+        span {
+            color: white;
+            font-size: small;
+            display: block;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            font-size: small;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+            <h2>Вход</h2>
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+            <form method="POST">
+                <div class="input-field">
+                    <input type="text" class="input" placeholder="Логин" name="login" required>
+                </div>
+                <div class="input-field">
+                    <input type="password" class="input" placeholder="Пароль" name="password" required>
+                </div>
+                <button type="submit" class="submit">Кирүү</button>
+            </form>
+            <span>Кош келиңиз!</span>
+        </div>
+    </div>
+</body>
+</html>
